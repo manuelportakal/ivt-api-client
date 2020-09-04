@@ -1,0 +1,27 @@
+﻿@model List<ivt_test.Models.SmsandCallResultDetail>
+
+@{
+    ViewBag.Title = "SMS White Listesi";
+}
+
+<h2>SMS White Listesi</h2>
+
+<table class="table table-bordered">
+    <tr><th>msisdn</th><th>brand</th><th>recipientType</th><th>permissiondate</th><th>createdAt</th><th>updatedAt</th></tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.msisdn</td>
+                    <td>@coll.brand</td>
+                    <td>@coll.recipientType</td>
+                    <td>@coll.permissiondate</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.updatedAt</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

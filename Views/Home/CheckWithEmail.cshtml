@@ -1,0 +1,45 @@
+﻿@model  List<ivt_test.Models.QueryWithEmailResult>
+
+@{
+    ViewBag.Title = "CheckWithEmail";
+}
+
+<h3>CheckWithEmail</h3>
+<hr />
+
+@using (Html.BeginForm("CheckWithEmail", "Home", new { transactionId = Request.Form["email"] }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <form class="form-inline" role="form" method="post" id="reused_form">
+        <div class="form-group sm-4">
+            <label for="email">
+                Email:
+            </label>
+            <input type="text" class="form-control" id="email" name="email" value="@Request.Form["email"]" required>
+        </div>
+        <button type="submit" class="btn btn-sm btn-success pull-right">Ara</button>
+    </form>
+}
+
+<br /><br />
+<table class="table table-bordered">
+    <tr><th>email</th><th>recordId</th><th>firstName</th><th>lastName</th><th>createdAt</th><th>updatedAt</th><th></th></tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+        <tr>
+            <td>@coll.email</td>
+            <td>@coll.recordId</td>
+            <td>@coll.firstName</td>
+            <td>@coll.lastName</td>
+            <td>@coll.createdAt</td>
+            <td>@coll.updatedAt</td>
+            <td>@Html.ActionLink("EmailDetails", "Details", new { /* id=item.PrimaryKey */ })</td>
+        </tr>
+            }
+        }
+        </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿@model List<ivt_test.Models.EmailResultDetail>
+
+@{
+    ViewBag.Title = "Mail White Listesi";
+}
+
+<h2>Mail White Listesi</h2>
+
+<table class="table table-bordered">
+    <tr><th>msisdn</th><th>brand</th><th>recipientType</th><th>permissiondate</th><th>createdAt</th><th>updatedAt</th></tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.email</td>
+                    <td>@coll.brand</td>
+                    <td>@coll.recipientType</td>
+                    <td>@coll.permissiondate</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.updatedAt</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

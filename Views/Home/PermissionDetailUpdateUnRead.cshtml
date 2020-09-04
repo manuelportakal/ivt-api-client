@@ -1,0 +1,93 @@
+﻿@model List<ivt_test.Models.PortfoyPermissionDetail>
+
+@{
+    ViewBag.Title = "Güncellemeleri Okunmamış Kayıtlar";
+}
+
+<h3>Güncellemeleri Okunmamış Kayıtlar</h3>
+<hr />
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>dataId</th>
+        <th>dataKey</th>
+        <th>dataType Id</th>
+        <th>dataType Text</th>
+        <th>collectorId</th>
+        <th>formId</th>
+        <th>form</th>
+        <th>collector</th>
+        <th>recordId</th>
+        <th>msisdnType Id</th>
+        <th>msisdnType Text</th>
+        <th>msisdn</th>
+        <th>sms</th>
+        <th>callable</th>
+        <th>email</th>
+        <th>sendmail</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>source Id</th>
+        <th>source Text</th>
+        <th>permissiondate</th>
+        <th>individual</th>
+        <th>corporate</th>
+        <th>doubleOptin</th>
+        <th>createdAt</th>
+        <th>confirmedAt</th>
+        <th>note</th>
+        <th>status Id</th>
+        <th>status Text</th>
+        <th>brands</th>
+    </tr>
+
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.dataId</td>
+                    <td>@coll.dataKey</td>
+                    <td>@coll.dataType.id</td>
+                    <td>@coll.dataType.text</td>
+                    <td>@coll.collectorId</td>
+                    <td>@coll.formId</td>
+                    <td>@coll.form</td>
+                    <td>@coll.collector</td>
+                    <td>@coll.recordId</td>
+                    <td>@coll.msisdnType.id</td>
+                    <td>@coll.msisdnType.text</td>
+                    <td>@coll.msisdn</td>
+                    <td>@coll.sms</td>
+                    <td>@coll.callable</td>
+                    <td>@coll.email</td>
+                    <td>@coll.sendmail</td>
+                    <td>@coll.firstName</td>
+                    <td>@coll.lastName</td>
+                    <td>@coll.source.id</td>
+                    <td>@coll.source.text</td>
+                    <td>@coll.permissiondate</td>
+                    <td>@coll.individual</td>
+                    <td>@coll.corporate</td>
+                    <td>@coll.doubleOptin</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.confirmedAt</td>
+                    <td>@coll.note</td>
+                    <td>@coll.status.id</td>
+                    <td>@coll.status.text</td>
+                    <td>
+                        @foreach (var item in coll.brands)
+                        {
+                            @item.ToString();<a> </a>
+
+                        }
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model List<ivt_test.Models.CollectorResultDetail>
+
+@{
+    ViewBag.Title = "GetCollector";
+}
+
+<h2>Veri Toplama Kanalları</h2>
+
+
+
+<table class="table table-bordered">
+    <tr><th>collectorId</th><th>collector</th><th>formId</th><th>title</th><th>type id</th><th>type text</th></tr>
+    <tbody>
+        @foreach (var coll in Model)
+        {
+            <tr>
+                <td>@coll.collectorId</td>
+                <td>@coll.collector</td>
+                <td>@coll.formId</td>
+                <td>@coll.title</td>
+                <td>@coll.type.id</td>
+                <td>@coll.type.text</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,172 @@
+﻿@model ivt_test.Models.MultiRecordResult
+
+@{
+    ViewBag.Title = "Toplu Kayit Sorgula";
+}
+
+<h3>Toplu Kayit Sorgula</h3>
+<hr />
+
+@using (Html.BeginForm("GetMultiRecord", "Home", new { transactionId = Request.Form["transactionId"] }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<form class="form-inline" role="form" method="post" id="reused_form">
+    <div class="form-group sm-4">
+        <label for="transactionId">
+            Transaction Id:
+        </label>
+        <input type="text" class="form-control" id="transactionId" name="transactionId" value="@Request.Form["transactionId"]" required>
+    </div>
+    <button type="submit" class="btn btn-sm btn-success pull-right">Ara</button>
+</form>
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.transactionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transactionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.collectorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.collectorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.form)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.form)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.collector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.collector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.call)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.call)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sendmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sendmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brandCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brandCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.msisdn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.msisdn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.errdesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.errdesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agent)
+        </dd>
+
+    </dl>
+</div>

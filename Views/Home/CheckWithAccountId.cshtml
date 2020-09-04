@@ -1,0 +1,58 @@
+﻿@model  List<ivt_test.Models.QueryWithAccountIdResult>
+@using ivt_test.Models;
+
+
+@{
+    ViewBag.Title = "Account İd İle Sorgula";
+}
+
+<h3>Account İd İle Sorgula</h3>
+<hr />
+
+@using (Html.BeginForm("CheckWithAccountId", "Home", new { transactionId = Request.Form["accountid"] }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <form class="form-inline" role="form" method="post" id="reused_form">
+        <div class="form-group sm-4">
+            <label for="accountid">
+                Account Id:
+            </label>
+            <input type="text" class="form-control" id="accountid" name="accountid" value="@Request.Form["accountid"]" required>
+        </div>
+        <button type="submit" class="btn btn-sm btn-success pull-right">Ara</button>
+    </form>
+}
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr><th>recordId</th><th>firstName</th><th>lastName</th><th>createdAt</th><th>updatedAt</th><th>Test Column</th><th></th><th></th></tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.recordId</td>
+                    <td>@coll.firstName</td>
+                    <td>@coll.lastName</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.updatedAt</td>
+                    <td>
+                        @foreach (KeyValuePair<string, GsmResultDetail[]>
+                            kvp in coll.detail.msisdn)
+                        {
+                            @kvp.Value[0].brandId.ToString()
+
+                        }
+                    </td>
+                    <td>@Html.ActionLink("MsisdnDetails", "Details", new { /* id=item.PrimaryKey */ })</td>
+                    <td>@Html.ActionLink("EmailDetails", "Details", new { /* id=item.PrimaryKey */ })</td>
+                </tr>
+
+            }
+
+        }
+    </tbody>
+</table>

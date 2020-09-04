@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>İVT Lite</h3>
+                <strong>BS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="active">
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Kanallar ve Marka
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu1">
+                        <li>
+                            <a href="/Home/GetCollector">Kanalları Listele</a>
+                        </li>
+                        <li>
+                            <a href="/Home/GetBrand">Markaları Listele</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Kayıt Ekleme
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li>
+                            <a href="/Home/AddRecord">Tekli Kayıt Ekle</a>
+                        </li>
+                        <li>
+                            <a href="#">Toplu Kayıt Ekle</a>
+                        </li>
+                        <li>
+                            <a href="/Home/GetMultiRecord">Toplu Kayıt Sorgula</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        İzin Toplama
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li>
+                            <a href="#">Onay Kodu Gönder</a>
+                        </li>
+                        <li>
+                            <a href="#">Onay Kodu Doğrula</a>
+                        </li>
+                        <li>
+                            <a href="#">Doğrulama Linki Gönder</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        İzin Bilgisi Sorgulama
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu4">
+                        <li>
+                            <a href="/Home/CheckWithAccountId">AccountID ile Sorgula</a>
+                        </li>
+                        <li>
+                            <a href="/Home/CheckWithGsm">GSM ile Sorgula</a>
+                        </li>
+                        <li>
+                            <a href="/Home/CheckWithEmail">E-posta ile Sorgula</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Portföy
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu5">
+
+                        <li>
+                            <a href="#pageSubmenu5-1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                AccountID Güncellemeleri
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu5-1">
+                                <li>
+                                    <a href="/Home/AccountIdUpdateUnread">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmamış Kayıtlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Home/AccountIdUpdateRead">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmuş Kayıtlar
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu5-2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                GSM Güncellemeleri
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu5-2">
+                                <li>
+                                    <a href="/Home/GsmUpdateUnread">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmamış Kayıtlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Home/GsmUpdateRead">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmuş Kayıtlar
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu5-3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                E-posta Güncellemeleri
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu5-3">
+                                <li>
+                                    <a href="/Home/EmailUpdateUnread">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmamış Kayıtlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Home/EmailUpdateRead">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmuş Kayıtlar
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu5-4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                İzin Detayı
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu5-4">
+                                <li>
+                                    <a href="/Home/PermissionDetailUpdateUnread">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmamış Kayıtlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Home/PermissionDetailUpdateRead">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Okunmuş Kayıtlar
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li>
+                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Listeler
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu6">
+
+                        <li>
+                            <a href="#pageSubmenu6-1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                SMS
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu6-1">
+                                <li>
+                                    <a href="/Home/SmsWhiteList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinli
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/SmsBlackList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinsiz
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/SmsUnknownList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Durum Bilinmeyen
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu6-2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                Arama
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu6-2">
+                                <li>
+                                    <a href="/Home/CallWhiteList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinli
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/CallBlackList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinsiz
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/CallUnknownList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Durum Bilinmeyen
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu6-3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-copy"></i>
+                                E-posta Gönderim
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu6-3">
+                                <li>
+                                    <a href="/Home/EmailWhiteList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinli
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/EmailBlackList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        İzinsiz
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/Home/EmailUnknownList">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Durum Bilinmeyen
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="active">
+                    <a href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Kupon Yönetimi
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu7">
+                        <li>
+                            <a href="#">Kupon Kontrolü</a>
+                        </li>
+                        <li>
+                            <a href="#">Kupon Kullan</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @using (Html.BeginForm("Logout", "Home", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        <a href="javascript:document.getElementById('logoutForm').submit()">
+                            <i class="fas fa-paper-plane"></i>
+                            Logout
+                        </a>
+                    }
+                    </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

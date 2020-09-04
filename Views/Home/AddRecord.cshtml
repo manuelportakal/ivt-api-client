@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "Kayıt Ekle";
+}
+
+<h2>Kayıt Ekle</h2>
+<hr />
+
+@using (Html.BeginForm("AddRecord", "Home", new { collectorId = "be9m87686i" }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="form_container">
+
+            <form role="form" method="post" id="reused_form">
+
+                <div class="row">
+
+                    <div class="col-sm-4 form-group">
+                        <label for="kayitId">
+                            Kayıt ID:
+                        </label>
+                        <input type="text" class="form-control" id="kayitId" name="kayitId" value="@Request.Form["kayitId"]" required>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="telefon">
+                            Telefon:
+                        </label>
+                        <input type="tel" class="form-control" id="telefon" name="telefon" value="@Request.Form["telefon"]" required>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="email">
+                            Email:
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" value="@Request.Form["email"]" required>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-sm-4 form-group">
+                        <label for="ad">
+                            Ad:
+                        </label>
+                        <input type="text" class="form-control" id="ad" name="ad" value="@Request.Form["ad"]" required>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="soyad">
+                            Soyad:
+                        </label>
+                        <input type="text" class="form-control" id="soyad" name="soyad" value="@Request.Form["soyad"]" required>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="tarih">
+                            Tarih:
+                        </label>
+                        <input type="datetime-local" class="form-control" id="tarih" name="tarih" value="@Request.Form["tarih"]" required>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col-sm-2 form-group">
+                        <label for="smsİzin">Sms İzni</label>
+                        <select class="form-control" name="smsİzin" id="smsİzin">
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="aramaİzin">Arama İzni</label>
+                        <select class="form-control" name="aramaİzin" id="aramaİzin">
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="epostaİzin">E-posta İzni</label>
+                        <select class="form-control" name="epostaİzin" id="epostaİzin">
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="bireyselİzin">Bireysel İzin</label>
+                        <select class="form-control" name="bireyselİzin" id="bireyselİzin">
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="kurumsalİzin">Kurumsal İzin</label>
+                        <select class="form-control" name="kurumsalİzin" id="kurumsalİzin">
+                            <option value="1">Evet</option>
+                            <option value="2">Hayır</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="izinKaynagi">İzin Kaynağı</label>
+                        <select class="form-control" name="izinKaynagi" id="izinKaynagi">
+                            <option value="1">Elektronik Ortam</option>
+                            <option value="2">Web Sayfası Üzerinden</option>
+                            <option value="3">Mobil Uygulama Üzerinden</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-10 form-group">
+                        <label for="not">
+                            Not:
+                        </label>
+                        <textarea class="form-control" type="textarea" name="not" id="not" rows="4" maxlength="5000" style="resize: none;" value="@Request.Form["not"]" required></textarea>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="marka">
+                            Markalar:
+                        </label>
+                        <select class="form-control" name="marka" id="marka" multiple size = 3>
+                            <option value="20">a</option>
+                            <option value="21">b</option>
+                            <option value="22">c</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <br />
+                    <div class="col-sm-12 form-group">
+                        <button type="submit" class="btn btn-lg btn-success pull-right">Oluştur</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+}

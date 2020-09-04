@@ -1,0 +1,20 @@
+﻿@model List<ivt_test.Models.BrandResultDetail>
+
+@{
+    ViewBag.Title = "Markalar";
+}
+
+<h2>Markalar</h2>
+
+<table class="table table-bordered">
+    <tr><th>brandId</th><th>title</th></tr>
+    <tbody>
+        @foreach (var coll in Model)
+        {
+            <tr>
+                <td>@coll.brandId</td>
+                <td>@coll.title</td>
+            </tr>
+        }
+    </tbody>
+</table>

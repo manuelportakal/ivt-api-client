@@ -1,0 +1,46 @@
+﻿@model  List<ivt_test.Models.QueryWithGsmResult>
+
+@{
+    ViewBag.Title = "Güncellemeleri Okunmamış Kayıtlar";
+}
+
+<h3>Güncellemeleri Okunmamış Kayıtlar</h3>
+<hr />
+
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>msisdn</th>
+        <th>recordId</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>msisdnType.id</th>
+        <th>msisdnType.text</th>
+        <th>createdAt</th>
+        <th>updatedAt</th>
+        <th></th>
+    </tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.msisdn</td>
+                    <td>@coll.recordId</td>
+                    <td>@coll.firstName</td>
+                    <td>@coll.lastName</td>
+                    <td>@coll.msisdnType.id</td>
+                    <td>@coll.msisdnType.text</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.updatedAt</td>
+                    <td>@Html.ActionLink("GsmDetails", "Home", new { /* id=item.PrimaryKey */ })</td>
+
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

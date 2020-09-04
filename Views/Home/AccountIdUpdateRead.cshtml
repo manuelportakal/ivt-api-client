@@ -1,0 +1,44 @@
+﻿@model  List<ivt_test.Models.QueryWithAccountIdResult>
+@using ivt_test.Models;
+
+
+@{
+    ViewBag.Title = "Güncellemeleri Okunmuş Kayıtlar";
+}
+
+<h3>Güncellemeleri Okunmuş Kayıtlar</h3>
+<hr />
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr><th>recordId</th><th>firstName</th><th>lastName</th><th>createdAt</th><th>updatedAt</th><th>Test Column</th><th></th><th></th></tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var coll in Model)
+            {
+                <tr>
+                    <td>@coll.recordId</td>
+                    <td>@coll.firstName</td>
+                    <td>@coll.lastName</td>
+                    <td>@coll.createdAt</td>
+                    <td>@coll.updatedAt</td>
+                    <td>
+                        @foreach (KeyValuePair<string, GsmResultDetail[]>
+                            kvp in coll.detail.msisdn)
+                        {
+                            @kvp.Key[0]
+
+                        }
+                    </td>
+
+                    <td>@Html.ActionLink("MsisdnDetails", "Details", new { /* id=item.PrimaryKey */ })</td>
+                    <td>@Html.ActionLink("EmailDetails", "Details", new { /* id=item.PrimaryKey */ })</td>
+                </tr>
+
+            }
+
+        }
+    </tbody>
+</table>
