@@ -29,6 +29,7 @@ namespace ivt_test.Controllers
         }
 
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<ActionResult> Login(Login login, string ReturnUrl = "")
         {
@@ -353,6 +354,7 @@ namespace ivt_test.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddRecord(string collectorId)
         {
             Record record = new Record();
@@ -404,6 +406,7 @@ namespace ivt_test.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> GetMultiRecord(string transactionId)
         {
             var url = "http://api.ivtlite.testdrive.club//data/bulk/" + transactionId;
@@ -428,6 +431,7 @@ namespace ivt_test.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CheckWithEmail(string email)
         {
             string[] emails = new string[] { email};
@@ -458,6 +462,7 @@ namespace ivt_test.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CheckWithGsm(string gsm)
         {
             string[] gsms = new string[] { gsm };
@@ -488,6 +493,7 @@ namespace ivt_test.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CheckWithAccountId(string accountid)
         {
             string[] accountids = new string[] { accountid };
